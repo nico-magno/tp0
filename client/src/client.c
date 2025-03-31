@@ -9,7 +9,7 @@ int main(void)
 	char* puerto;
 	char* valor;
 
-	t_log* logger;
+	t_log* logger = log_create("tp0.log", "Cliente", true, LOG_LEVEL_INFO);
 	t_config* config;
 
 	/* ---------------- LOGGING ---------------- */
@@ -18,6 +18,9 @@ int main(void)
 
 	// Usando el logger creado previamente
 	// Escribi: "Hola! Soy un log"
+	log_info(logger, "Hola! Soy un Log");
+
+	log_destroy (logger);
 
 
 	/* ---------------- ARCHIVOS DE CONFIGURACION ---------------- */
